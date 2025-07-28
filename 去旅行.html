@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO三大标签 -->
+    <title>爱上旅游-去旅行</title>
+    <meta name="description" content="爱上旅游，武汉旅游景点预览，旅游路线便捷规划，同行驴友推荐">
+    <meta name="keywords" content="武汉旅游">
+    <!-- 引入页面图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 引入CSS样式 -->
+    <link rel="stylesheet" href="./CSS/base.css">
+    <link rel="stylesheet" href="./CSS/common.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        body{
+            background-image: url(./images/wall.jpg);
+        
+        }
+        .travel {
+            position: relative;
+            margin-top: 50px;
+            height: 700px;
+        }
+
+        .amap-container {
+            position: absolute;
+            top: 0px;
+            left: 428px;
+        }
+
+        .container-button table {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 600px;
+            padding: 20px 0;
+            background: rgba(105, 101, 101, .6);
+            box-sizing: border-box;
+        }
+       
+
+        .container-button table .ontext {
+            font-family: "微软雅黑";
+            list-style: none;
+            color: #ff6700;
+            font-size: large;
+            font-weight: 500;
+            margin-left: 120px;
+            
+            margin-bottom: 30px;
+        }
+
+        .onsearch {
+            width: 150px;
+            height: 50px;
+            border: 1px solid #e0e0e0;
+            padding: 0 10px;
+            border-radius: 25px;
+            box-sizing: border-box;
+        }
+
+        .onarea{
+            width: 150px;
+            border: 1px solid #e0e0e0;
+            padding: 0 10px;
+            border-radius: 25px;
+            box-sizing: border-box;
+        }
+
+        .container-button table .onbutton {
+            background-color: #fff;
+            /* Green */
+            color: #ff6700;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: 30px;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 25px;
+            border: 2px solid #666;
+
+        }
+
+        .container-button table .onbutton:hover {
+            background-color: #ff6700;
+            color: white;
+        }
+        
+       
+
+
+        #panel {
+            position: fixed;
+            background-color: white;
+            max-height: 90%;
+            overflow-y: auto;
+            top: 10px;
+            right: 10px;
+            width: 280px;
+        }
+
+        #panel .amap-call {
+            background-color: #009cf9;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        #panel .amap-lib-driving {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            overflow: hidden;
+
+        }
+    </style>
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: 'deb236e018af673aaf8874513ecf9f29',
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=2.0&amp;key=7fc83b9c21b69929ff97838efcd96cc0"></script>
+</head>
+
+<body>
+    <!-- 头部模块 -->
+    <header>
+        <!-- 顶部选择栏 -->
+        <div class="site-topBar">
+            <!-- 版心 -->
+            <div class="container">
+                <!-- 左侧导航条（向左浮动） -->
+                <div class="top-nav fl">
+                    <a href="./index.html">首页</a>
+                    <span>|</span>
+                    <a href="./去旅行.html">去旅行</a>
+                    <span>|</span>
+                    <a href="./找驴友.html">找驴友</a>
+                    <span>|</span>
+                    <a href="./旅行足迹.html">旅行足迹</a>
+                    <span>|</span>
+                    <a href="./购物车.html">周边产品</a>
+
+                </div>
+
+                <div class="top-info fr">
+                    <a href="./登陆.html">登陆</a>
+                    <span>|</span>
+                    <a href="./登陆.html">注册</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页面头部 -->
+        <div class="site-header container .clearfix::before,
+        .clearfix::after">
+            <!-- header-logo 头部logo（向左浮动） -->
+            <div class="header-logo fl">
+                <a href="">
+                    <img src="./images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <!-- header-nav 头部标语 -->
+            <div class="header-nav fl"></div>
+
+            <!-- header-search 头部搜索栏（向右浮动） -->
+            <div class="header-search fr">
+                <input type="text" name="search" class="search-text" placeholder="东湖">
+                <input type="submit" class="iconfont icon-search" value="&#xe741">
+            </div>
+        </div>
+    </header>
+
+    <div class="travel container">
+        <form class="container-button fl">
+            <table>
+                <tr>
+                    <td>
+                        <p class="ontext">起点</p>
+                        <input type="text" id="startpoint" class="onsearch">
+                        <input type="button" value="确定" onclick="getvalue(1)" class="onbutton">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p class="ontext">途径点</p>
+                        <textarea name="" id="midpoint" cols="30" rows="10" class="onarea">不同地点请换行</textarea>
+                        <input type="button" value="确定" onclick="getvalue(2)" class="onbutton">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p class="ontext">终点</p>
+                        <input type="text" id="endpoint" class="onsearch">
+                        <input type="button" value="确定" onclick="getvalue(3)" class="onbutton">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="myrun()" value="开始规划路线" class="onbutton la"></td>
+                </tr>
+
+            </table>
+        </form>
+
+
+
+        <div style="width: 800px; height: 600px; border: 1px solid rgb(204, 204, 204); cursor: default; background-color: rgb(244, 244, 244);"
+            id="container" class="amap-container"><iframe
+                style="width: 100%; height: 100%; position: absolute; opacity: 0; margin: 0px; padding: 0px; border: none;"
+                src="about:blank"></iframe>
+            <div class="amap-maps" tabindex="0">
+                <div class="amap-layers"><canvas class="amap-layer" width="1504" height="804"
+                        style="width: 802px; height: 602px;"></canvas>
+                    <div class="amap-markers"></div>
+                </div>
+                <div class="amap-overlays"></div>
+            </div>
+            <div class="amap-controls">
+                <div class="amap-control amap-toolbar" style="right: 20px; bottom: 20px;"><span class="amap-ctrl-zoomin"
+                        data-type="add" style="color: rgb(0, 0, 0);">+</span><span class="amap-ctrl-zoomout"
+                        data-type="sub" style="color: rgb(0, 0, 0);">-</span></div>
+            </div><a class="amap-logo"><img src="https://webapi.amap.com/theme/v2.0/logo@2x.png"></a>
+            <div class="amap-copyright" style="display: none;"><!--v2.0--> © 2023 AutoNavi <span class="amap-mcode">-
+                    GS(2021)6375号</span></div>
+        </div>
+        <div id="panel"></div>
+    </div>
+
+    <!-- 页面底部 -->
+    <footer>
+        <div class="site-footer container">
+            <!-- footer-service 上面的服务选项 -->
+            <div class="footer-service">
+            </div>
+
+
+            <!-- footer-links 下面的链接选项 -->
+            <div class="footer-links">
+                <dl>
+                    <dt></dt>
+                </dl>
+                <dl>
+                    <dt>旅游资讯</dt>
+                    <dd><a href="">宾馆索引</a></dd>
+                    <dd><a href="">机票索引</a></dd>
+                    <dd><a href="">邮轮索引</a></dd>
+                    <dd><a href="">用车索引</a></dd>
+                    <dd><a href="">火车票索引</a></dd>
+                </dl>
+                <dl>
+                    <dt>服务中心</dt>
+                    <dd><a href="">旅途服务</a></dd>
+                    <dd><a href="">景点信息服务</a></dd>
+                    <dd><a href="">价格服务</a></dd>
+                    <dd><a href="">订单查询</a></dd>
+                    <dd><a href="">保障服务</a></dd>
+                </dl>
+                <dl>
+                    <dt>加盟合作</dt>
+                    <dd><a href="">代理合作</a></dd>
+                    <dd><a href="">保险合作</a></dd>
+                    <dd><a href="">保险代理</a></dd>
+                    <dd><a href="">酒店加盟</a></dd>
+                    <dd><a href="">目的地景区合作</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">联系我们</a></dd>
+                    <dd><a href="">知识产权</a></dd>
+                    <dd><a href="">安全中心</a></dd>
+                    <dd><a href="">诚聘英才</a></dd>
+                    <dd><a href="">隐私政策</a></dd>
+                </dl>
+                <dl>
+                    <dt>友情连接</dt>
+                    <dd><a href="">携程旅行</a></dd>
+                    <dd><a href="">马蜂窝</a></dd>
+                    <dd><a href="">去哪旅行</a></dd>
+                    <dd><a href="">飞猪旅游</a></dd>
+                    <dd><a href="">远方旅游</a></dd>
+            </div>
+            <!-- 联系方式div -->
+            <div class="col-contact fr">
+                <p class="phone">601- 12315</p>
+                <p class="time">8:00-18:00</p>
+                <a href=""><em class="iconfont icon-message"></em>人工客服</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        var start;
+        var end;
+        var mid;
+        var startlnglat;
+        var endlnglat;
+        var midlnglat = [];
+        var order = [];
+        var points = [];
+
+        function addmarker(lng, lat) {
+            var marker = new AMap.Marker({
+                position: new AMap.LngLat(lng, lat),
+                offset: new AMap.Pixel(-19, -63),//应设置为（-x/2，-y）
+                icon: 'mark_bs.png', // 添加 Icon 图标 URL
+            });
+            map.add(marker);
+            var infoWindow = new AMap.InfoWindow({ //创建信息窗体
+                // isCustom: true,  //使用自定义窗体
+                content: '<div style="border:#ccc solid 1px;background-color: white;">信息窗体</div>', //信息窗体的内容可以是任意html片段
+                offset: new AMap.Pixel(0, -63)
+            });
+            var onMarkerClick = function (e) {
+                infoWindow.open(map, e.target.getPosition());//打开信息窗体
+                //e.target就是被点击的Marker
+            }
+            marker.on('click', onMarkerClick);//绑定click事件
+        }
+
+        var mydata = [
+            { "name": "武汉大学", "longitude": 114.360734, "latitude": 30.541093 },
+            { "name": "黄鹤楼", "longitude": 114.304796, "latitude": 30.544173 },
+            { "name": "华中科技大学", "longitude": 114.414724, "latitude": 30.515977 },
+            { "name": "杨春湖", "longitude": 114.417931, "latitude": 30.613491 },
+            { "name": "龟山风景区", "longitude": 114.275421, "latitude": 30.536059 },
+            { "name": "磨山景区", "longitude": 114.419704, "latitude": 30.554438 },
+            { "name": "龙灵山生态公园", "longitude": 114.126495, "latitude": 30.432449 },
+            { "name": "银泰创意城", "longitude": 114.362928, "latitude": 30.532844 },
+            { "name": "武汉欢乐谷", "longitude": 114.399429, "latitude": 30.59723 },
+            { "name": "东湖生态旅游风景区", "longitude": 114.420005, "latitude": 30.557869 },
+            { "name": "武汉动物园", "longitude": 114.248496, "latitude": 30.548359 },
+            { "name": "宝通禅寺", "longitude": 114.347202, "latitude": 30.538026 },
+            { "name": "龙泉山", "longitude": 114.522843, "latitude": 30.417594 },
+            { "name": "青龙山国家森林公园", "longitude": 114.339468, "latitude": 30.33248 },
+            { "name": "梁子湖风景区", "longitude": 114.510015, "latitude": 30.26171 },
+            { "name": "世界城光谷步行街", "longitude": 114.409278, "latitude": 30.510838 },
+            { "name": "武汉梦时代广场", "longitude": 114.347204, "latitude": 30.53521 },
+            { "name": "鹦鹉洲长江大桥", "longitude": 114.298159, "latitude": 30.532049 },
+            { "name": "武汉长江大桥", "longitude": 114.295957, "latitude": 30.554757 },
+            { "name": "武汉园博园", "longitude": 114.222347, "latitude": 30.632221 },
+            { "name": "金银湖国家城市湿地公园", "longitude": 114.192964, "latitude": 30.647332 },
+            { "name": "武汉花博汇", "longitude": 114.080648, "latitude": 30.495167 },
+            { "name": "湖北省博物馆", "longitude": 114.371879, "latitude": 30.567828},
+            { "name": "木兰天池", "longitude": 114.286972, "latitude": 31.184191 },
+            { "name": "武汉海昌极地海洋公园", "longitude": 114.285069, "latitude": 30.67007 },
+            { "name": "昙华林", "longitude": 114.315578, "latitude": 30.557656 },
+            { "name": "户部巷美食街", "longitude": 114.304692, "latitude": 30.553051 },
+            { "name": "楚河汉街", "longitude": 114.346917, "latitude": 30.563168 },
+            { "name": "盘龙城国家考古遗址公园", "longitude": 114.275858, "latitude": 30.70021 },
+            { "name": "辛亥革命武昌起义纪念馆", "longitude": 114.312911, "latitude": 30.547866 },
+            { "name": "沙湖公园", "longitude": 114.344803, "latitude": 30.570093 }
+        ];
+
+        function getvalue(i) {
+            if (i == 1) {
+                start = document.getElementById("startpoint").value;
+                for (var item in mydata) {
+                    if (mydata[item]["name"] == start) {
+                        startlnglat = [mydata[item]["longitude"], mydata[item]["latitude"]];
+                        break;
+                    }
+                }
+            }
+            if (i == 2) {
+                midlnglat = [];
+                mid = document.getElementById("midpoint").value;
+                mid = mid.split(/[(\r\n)\r\n]+/); // 根据换行或者回车进行识别
+                mid.forEach((item, index) => { // 删除空项
+                    if (!item) {
+                        mid.splice(index, 1);
+                    }
+                })
+                for (var thename of mid) {
+                    for (var item in mydata) {
+                        if (mydata[item]["name"] == thename) {
+                            midlnglat.push([mydata[item]["longitude"], mydata[item]["latitude"], thename]);
+                            break;
+                        }
+                    }
+                }
+            }
+            if (i == 3) {
+                end = document.getElementById("endpoint").value;
+                for (var item in mydata) {
+                    if (mydata[item]["name"] == end) {
+                        endlnglat = [mydata[item]["longitude"], mydata[item]["latitude"]];
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        function myrun() {
+            order = [];
+            points = [];
+            var dis = AMap.GeometryUtil.distance(startlnglat, endlnglat);
+            console.log(dis);
+            var firstdis = [];
+            var seconddis = [];
+            var lastdis = [];
+            for (item of midlnglat) {
+                var sdis = AMap.GeometryUtil.distance(startlnglat, [item[0], item[1]]);
+                var edis = AMap.GeometryUtil.distance([item[0], item[1]], endlnglat);
+                console.log(sdis, edis);
+                if (edis > dis && sdis < dis) {
+                    var temp = item;
+                    temp.push(sdis);
+                    firstdis.push(temp);
+                } else if (edis <= dis) {
+                    var temp = item;
+                    temp.push(sdis);
+                    seconddis.push(temp);
+                } else {
+                    var temp = item;
+                    temp.push(edis);
+                    lastdis.push(temp);
+                }
+            }
+            firstdis.sort((a, b) => { return a[3] - b[3] });
+            seconddis.sort((a, b) => { return a[3] - b[3] });
+            lastdis.sort((a, b) => { return b[3] - a[3] });
+            console.log(firstdis, seconddis, lastdis);
+            order.push(start);
+            for (item of firstdis) {
+                order.push(item[2]);
+                // addmarker(item[0],item[1]);
+            }
+            for (item of seconddis) {
+                order.push(item[2]);
+                // addmarker(item[0],item[1]);
+            }
+            for (item of lastdis) {
+                order.push(item[2]);
+                // addmarker(item[0],item[1]);
+            }
+            order.push(end);
+            console.log(order);
+            for (item of order) {
+                points.push({ keyword: item, city: '武汉' });
+            }
+            console.log(points);
+            AMap.plugin('AMap.Driving', function () {//异步加载插件
+                var driving = new AMap.Driving({
+                    // 驾车路线规划策略，AMap.DrivingPolicy.LEAST_TIME是最快捷模式
+                    policy: AMap.DrivingPolicy.LEAST_TIME,
+                    // map 指定将路线规划方案绘制到对应的AMap.Map对象上
+                    map: map,
+                    // panel 指定将结构化的路线详情数据显示的对应的DOM上，传入值需是DOM的ID
+                    panel: 'panel'
+                })
+                driving.search(points, function (status, result) {
+                    // 未出错时，result即是对应的路线规划方案
+                })
+            });
+
+        }
+
+
+        var map = new AMap.Map('container', {
+            center: [114.360734, 30.541093],
+            zooms: [4, 18],//设置地图级别范围
+            zoom: 13
+        });
+
+        AMap.plugin('AMap.ToolBar', function () {//异步加载插件
+            var toolbar = new AMap.ToolBar();
+            map.addControl(toolbar);
+        });
+
+
+    </script>
+</body>
+
+</html>

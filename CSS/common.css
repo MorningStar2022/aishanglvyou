@@ -1,0 +1,241 @@
+/* 版心样式公共类 */
+.container {
+    width: 1226px;
+    margin: 0 auto;
+    
+}
+/* body{
+    background: url("../images/wall.jpg")  no-repeat;
+} */
+
+/* 顶部选择框 */
+.site-topBar {
+    height: 60px;
+    border-top:3px solid #ff8500;
+    border-bottom: 1px solid #edeef0;
+    background-color: #fcfcfc;
+}
+
+/* 设置顶部字体样式 */
+.site-topBar a {
+    font-size: 18px;
+    color:#333;
+    line-height: 60px;
+}
+
+.site-topBar a:hover {
+    color: #ff6700;
+}
+
+.site-topBar span {
+    margin: 0 0.3em;
+    color: #424242;
+}
+
+/* 设置版心样式 */
+.site-topBar .container {
+    height: 60px;
+
+}
+
+.site-topBar .top-cart {
+    width: 120px;
+    height: 60px;
+    background-color: #424242;
+    margin-left: 15px;
+    text-align: center;
+}
+
+
+
+
+/* 设置页面头部div样式 */
+.site-header {
+    height: 100px;
+
+}
+
+/* 设置logo样式 */
+.site-header .header-logo {
+    height: 80px;
+    width: 160px;
+    margin-top: 10px;
+
+}
+
+.site-header .header-logo a {
+    display: block;
+    width: 160px;
+    height: 80px;
+}
+
+.site-header .header-logo img {
+    width: 160px;
+    height: 80px;
+
+}
+
+.site-header .header-nav {
+    width: 600px;
+    height: 100px;
+    margin-left: 50px;
+    background: url("../images/biaoyu.png") no-repeat 100%;
+}
+
+.site-header .header-search {
+    position: relative;
+    width: 296px;
+    height: 50px;
+    margin-top: 25px;
+}
+
+.site-header .header-search .search-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 245px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.site-header .header-search .icon-search {
+    position: absolute;
+    left: 244px;
+    top: 0;
+    width: 52px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-size: 24px;
+}
+
+.site-header .header-search .icon-search:hover {
+    background: #ff6700;
+    color: #fff;
+}
+
+
+/* 设置底部div样式 */
+.site-footer {
+    height: 472.5px;
+
+}
+
+/* 设置下面的服务选项 */
+.site-footer .footer-service {
+    height: 80px;
+    padding: 27px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e0e0e0;
+
+
+}
+
+.site-footer .footer-service ul {
+    height: 25px;
+}
+
+
+.site-footer .footer-service li {
+    float: left;
+    width: 19.9%;
+    height: 25px;
+    line-height: 25px;
+    border-left: 1px solid #e0e0e0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.site-footer .footer-service li em {
+    margin-right: 6px;
+    font-size: 24px;
+}
+
+.site-footer .footer-service li:first-child {
+    border-left: none;
+}
+
+
+.site-footer .footer-service a:hover {
+    color: #ff6700;
+}
+
+.site-footer .footer-links {
+    padding: 40px 0;
+}
+
+
+.site-footer .footer-links dl {
+    float: left;
+    width: 160px;
+    height: 312.5px;
+}
+
+.site-footer .footer-links dt {
+    margin-bottom: 26px;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #424242;
+}
+
+.site-footer .footer-links dd {
+    margin-top: 10px;
+    font-size: 12px;
+
+}
+
+
+.site-footer .footer-links dd a{
+    color: #757575;
+}
+
+
+.site-footer .footer-links dd a:hover {
+    color: #ff6700;
+}
+
+.site-footer .col-contact {
+    width: 252px;
+    height: 80px;
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.site-footer .col-contact .phone {
+    margin-bottom: 5px;
+    font-size: 22px;
+    line-height: 1;
+    color: #ff6700;
+}
+
+.site-footer .col-contact .time {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.site-footer .col-contact a {
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    border: 1px solid #ff6700;
+    color: #ff6700;
+    font-size: 12px;
+    line-height: 28px;
+    box-sizing: border-box;
+   
+
+}
+
+.site-footer .col-contact em {
+    font-size: 12px;
+    vertical-align: middle; 
+    margin-right: 2px;
+}
+
+.site-footer .col-contact a:hover {
+    background-color: #ff6700;
+    color: #fff;
+}

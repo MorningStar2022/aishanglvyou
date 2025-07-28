@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO三大标签 -->
+    <title>爱上旅游-旅行足迹</title>
+    <meta name="description" content="爱上旅游，武汉旅游景点预览，旅游路线便捷规划，同行驴友推荐">
+    <meta name="keywords" content="武汉旅游">
+    <!-- 引入页面图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 引入CSS样式 -->
+    <link rel="stylesheet" href="./CSS/base.css">
+    <link rel="stylesheet" href="./CSS/common.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link href="https://cdn.bootcss.com/leaflet/1.3.4/leaflet.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/leaflet/1.3.4/leaflet.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/viewerjs/1.3.1/viewer.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/viewerjs/1.3.1/viewer.min.js"></script>
+
+    <style>
+        body {
+            background-image: url(./images/wall.jpg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部模块 -->
+    <header>
+        <!-- 顶部选择栏 -->
+        <div class="site-topBar">
+            <!-- 版心 -->
+            <div class="container">
+                <!-- 左侧导航条（向左浮动） -->
+                <div class="top-nav fl">
+                    <a href="./index.html">首页</a>
+                    <span>|</span>
+                    <a href="./去旅行.html">去旅行</a>
+                    <span>|</span>
+                    <a href="./找驴友.html">找驴友</a>
+                    <span>|</span>
+                    <a href="./旅行足迹.html">旅行足迹</a>
+                    <span>|</span>
+                    <a href="./购物车.html">周边产品</a>
+
+                </div>
+
+                <div class="top-info fr">
+                    <a href="./登陆.html">登陆</a>
+                    <span>|</span>
+                    <a href="./登陆.html">注册</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页面头部 -->
+        <div class="site-header container">
+            <!-- header-logo 头部logo（向左浮动） -->
+            <div class="header-logo fl">
+                <a href="">
+                    <img src="./images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <!-- header-nav 头部标语 -->
+            <div class="header-nav fl"></div>
+
+            <!-- header-search 头部搜索栏（向右浮动） -->
+            <div class="header-search fr">
+                <input type="text" name="search" class="search-text" placeholder="东湖">
+                <input type="submit" class="iconfont icon-search" value="&#xe741">
+            </div>
+        </div>
+    </header>
+
+
+    <div id="map" style="width:100%;height: 850px;"
+        class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom container"
+        tabindex="0">
+        <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-437px, 0px, 0px);">
+            <div class="leaflet-pane leaflet-tile-pane">
+                <div class="leaflet-layer " style="z-index: 0; opacity: 1;">
+                    <div class="leaflet-tile-container leaflet-zoom-animated"
+                        style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt=""
+                            role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/12/26"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(709px, 125px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/13/26"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(709px, 381px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/12/25"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(453px, 125px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/12/27"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(965px, 125px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/13/25"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(453px, 381px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/13/27"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(965px, 381px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/11/26"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(709px, -131px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/14/26"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(709px, 637px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/11/25"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(453px, -131px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/11/27"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(965px, -131px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/14/25"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(453px, 637px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/14/27"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(965px, 637px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/12/24"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(197px, 125px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/12/28"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(1221px, 125px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/13/24"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(197px, 381px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/13/28"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(1221px, 381px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/11/24"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(197px, -131px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/11/28"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(1221px, -131px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/14/24"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(197px, 637px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/14/28"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(1221px, 637px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/12/23"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-59px, 125px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/12/29"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(1477px, 125px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/13/23"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-59px, 381px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/13/29"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(1477px, 381px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/11/23"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-59px, -131px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/11/29"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(1477px, -131px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/14/23"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-59px, 637px, 0px); opacity: 1;"><img
+                            alt="" role="presentation"
+                            src="http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/5/14/29"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(1477px, 637px, 0px); opacity: 1;">
+                    </div>
+                </div>
+            </div>
+            <div class="leaflet-pane leaflet-shadow-pane"></div>
+            <div class="leaflet-pane leaflet-overlay-pane"></div>
+            <div class="leaflet-pane leaflet-marker-pane"></div>
+            <div class="leaflet-pane leaflet-tooltip-pane"></div>
+            <div class="leaflet-pane leaflet-popup-pane"></div>
+            <div class="leaflet-proxy leaflet-zoom-animated"
+                style="transform: translate3d(6691px, 3372px, 0px) scale(16);"></div>
+        </div>
+        <div class="leaflet-control-container">
+            <div class="leaflet-top leaflet-left">
+                <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in"
+                        href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a
+                        class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button"
+                        aria-label="Zoom out">−</a></div>
+            </div>
+            <div class="leaflet-top leaflet-right"></div>
+            <div class="leaflet-bottom leaflet-left"></div>
+            <div class="leaflet-bottom leaflet-right">
+                <div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com"
+                        title="A JS library for interactive maps">Leaflet</a> | 旅游地图相册Demo——那些我去过的城市</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 页面底部 -->
+    <footer>
+        <div class="site-footer container">
+            <!-- footer-service 上面的服务选项 -->
+            <div class="footer-service">
+            </div>
+
+
+            <!-- footer-links 下面的链接选项 -->
+            <div class="footer-links">
+                <dl>
+                    <dt></dt>
+                </dl>
+                <dl>
+                    <dt>旅游资讯</dt>
+                    <dd><a href="">宾馆索引</a></dd>
+                    <dd><a href="">机票索引</a></dd>
+                    <dd><a href="">邮轮索引</a></dd>
+                    <dd><a href="">用车索引</a></dd>
+                    <dd><a href="">火车票索引</a></dd>
+                </dl>
+                <dl>
+                    <dt>服务中心</dt>
+                    <dd><a href="">旅途服务</a></dd>
+                    <dd><a href="">景点信息服务</a></dd>
+                    <dd><a href="">价格服务</a></dd>
+                    <dd><a href="">订单查询</a></dd>
+                    <dd><a href="">保障服务</a></dd>
+                </dl>
+                <dl>
+                    <dt>加盟合作</dt>
+                    <dd><a href="">代理合作</a></dd>
+                    <dd><a href="">保险合作</a></dd>
+                    <dd><a href="">保险代理</a></dd>
+                    <dd><a href="">酒店加盟</a></dd>
+                    <dd><a href="">目的地景区合作</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">联系我们</a></dd>
+                    <dd><a href="">知识产权</a></dd>
+                    <dd><a href="">安全中心</a></dd>
+                    <dd><a href="">诚聘英才</a></dd>
+                    <dd><a href="">隐私政策</a></dd>
+                </dl>
+                <dl>
+                    <dt>友情连接</dt>
+                    <dd><a href="">携程旅行</a></dd>
+                    <dd><a href="">马蜂窝</a></dd>
+                    <dd><a href="">去哪旅行</a></dd>
+                    <dd><a href="">飞猪旅游</a></dd>
+                    <dd><a href="">远方旅游</a></dd>
+            </div>
+            <!-- 联系方式div -->
+            <div class="col-contact fr">
+                <p class="phone">601- 12315</p>
+                <p class="time">8:00-18:00</p>
+                <a href=""><em class="iconfont icon-message"></em>人工客服</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

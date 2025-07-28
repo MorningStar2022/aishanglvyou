@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO三大标签 -->
+    <title>爱上旅游</title>
+    <meta name="description" content="爱上旅游，武汉旅游景点预览，旅游路线便捷规划，同行驴友推荐">
+    <meta name="keywords" content="武汉旅游">
+    <!-- 引入页面图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 引入CSS样式 -->
+    <link rel="stylesheet" href="./CSS/base.css">
+    <link rel="stylesheet" href="./CSS/common.css">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css?1.1.11" />
+    <script src="http://cache.amap.com/lbs/static/es5.min.js?1.1.11"></script>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=9f63dcc0688726f6caa9442469e9af26"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js?1.1.11"></script>
+    <style>
+        body {
+            background-image: url(./images/wall.jpg);
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 头部模块 -->
+    <header>
+        <!-- 顶部选择栏 -->
+        <div class="site-topBar">
+            <!-- 版心 -->
+            <div class="container">
+                <!-- 左侧导航条（向左浮动） -->
+                <div class="top-nav fl">
+                    <a href="./index.html">首页</a>
+                    <span>|</span>
+                    <a href="./去旅行.html">去旅行</a>
+                    <span>|</span>
+                    <a href="./找驴友.html">找驴友</a>
+                    <span>|</span>
+                    <a href="./旅行足迹.html">旅行足迹</a>
+                    <span>|</span>
+                    <a href="./购物车.html">周边产品</a>
+
+                </div>
+
+                <div class="top-info fr">
+                    <a href="./登陆.html">登陆</a>
+                    <span>|</span>
+                    <a href="./登陆.html">注册</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页面头部 -->
+        <div class="site-header container">
+            <!-- header-logo 头部logo（向左浮动） -->
+            <div class="header-logo fl">
+                <a href="">
+                    <img src="./images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <!-- header-nav 头部标语 -->
+            <div class="header-nav fl"></div>
+
+            <!-- header-search 头部搜索栏（向右浮动） -->
+            <div class="header-search fr">
+                <input type="text" name="search" class="search-text" placeholder="东湖">
+                <input type="submit" class="iconfont icon-search" value="&#xe741">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体部分 -->
+    <main>
+        <div class="home-hero-container container">
+            <!-- 上面区域 -->
+            <div class="map-container" id="container" style="width: 800px;height: 600px;"></div>
+            <!-- 侧边栏 -->
+            <div class="site-category">
+                <ul>
+                    <li>
+                        <span>武汉旅游热榜</span>
+                    </li>
+                    <li>
+                        <a href="https://whmlcy.net/">
+                            No.1 木兰草原
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.whdonghu.gov.cn">
+                            No.2 东湖
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.cnhhl.com/">
+                            No.3 黄鹤楼
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.hbww.org/home/Index.aspx">
+                            No.4 湖北省博物馆
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.whfwgz.com/">
+                            No.5 凤娃古寨
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://whybh2015.com">
+                            No.6 武汉园博园
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.guiyuanchansi.com.cn">
+                            No.7 归元寺
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.haichangoceanpark.com/wuhan">
+                            No.8 海昌极地海洋世界
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://whhbh.net/">
+                            NO.9 武汉花博汇
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.hubei.gov.cn/jmct/hbms/wh_9034/201710/t20171011_1695312.shtml">
+                            NO.10 金龙水寨
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        </div>
+    </main>
+
+
+    <!-- 页面底部 -->
+    <footer>
+        <div class="site-footer container">
+            <!-- footer-service 上面的服务选项 -->
+            <div class="footer-service">
+            </div>
+
+
+            <!-- footer-links 下面的链接选项 -->
+            <div class="footer-links">
+                <dl>
+                    <dt></dt>
+                </dl>
+                <dl>
+                    <dt>旅游资讯</dt>
+                    <dd><a href="">宾馆索引</a></dd>
+                    <dd><a href="">机票索引</a></dd>
+                    <dd><a href="">邮轮索引</a></dd>
+                    <dd><a href="">用车索引</a></dd>
+                    <dd><a href="">火车票索引</a></dd>
+                </dl>
+                <dl>
+                    <dt>服务中心</dt>
+                    <dd><a href="">旅途服务</a></dd>
+                    <dd><a href="">景点信息服务</a></dd>
+                    <dd><a href="">价格服务</a></dd>
+                    <dd><a href="">订单查询</a></dd>
+                    <dd><a href="">保障服务</a></dd>
+                </dl>
+                <dl>
+                    <dt>加盟合作</dt>
+                    <dd><a href="">代理合作</a></dd>
+                    <dd><a href="">保险合作</a></dd>
+                    <dd><a href="">保险代理</a></dd>
+                    <dd><a href="">酒店加盟</a></dd>
+                    <dd><a href="">目的地景区合作</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">联系我们</a></dd>
+                    <dd><a href="">知识产权</a></dd>
+                    <dd><a href="">安全中心</a></dd>
+                    <dd><a href="">诚聘英才</a></dd>
+                    <dd><a href="">隐私政策</a></dd>
+                </dl>
+                <dl>
+                    <dt>友情连接</dt>
+                    <dd><a href="">携程旅行</a></dd>
+                    <dd><a href="">马蜂窝</a></dd>
+                    <dd><a href="">去哪旅行</a></dd>
+                    <dd><a href="">飞猪旅游</a></dd>
+                    <dd><a href="">远方旅游</a></dd>
+            </div>
+            <!-- 联系方式div -->
+            <div class="col-contact fr">
+                <p class="phone">601-12315</p>
+                <p class="time">8:00-18:00</p>
+                <a href=""><em class="iconfont icon-message"></em>人工客服</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var map = new AMap.Map('container', {
+            resizeEnable: true,
+            zoom: 11,
+            center: [114.3683, 30.5406]
+        });
+    </script>
+
+</body>
+
+</html>
